@@ -31,7 +31,7 @@ def load_and_preprocess_data(filepath):
     print(f"Dataset shape: {df.shape}")
 
     # Rename columns to standardized names
-    # Note: Adjust these if your CSV has different column names
+  
     if 'song' in df.columns:
         df = df.rename(columns={"song": "track_name", "text": "lyrics"})
     
@@ -63,7 +63,7 @@ def load_and_preprocess_data(filepath):
     print("Preprocessing lyrics (this may take a while)...")
     df['clean_lyrics'] = df['lyrics'].apply(preprocess)
     
-    return df, lemmatizer, stop_words # returning helpers if needed outside
+    return df, lemmatizer, stop_words 
 
 def build_vectorizer(df):
     """Build TF-IDF Vectorizer."""
@@ -113,7 +113,7 @@ def main():
     print("\nObservation Result:")
     print(result)
     
-    # You can add the evaluation logic here if needed, but for a run script, a single prediction is often enough demo.
+   
 
 if __name__ == "__main__":
     main()
